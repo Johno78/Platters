@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cleaning Chemicals | Gellings Isle of Man</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1a2340;
+    --navy-light:#2b3760;
+    --teal:#54b2ac;
+    --teal-dark:#3d8f8a;
+    --brass:#c9a35c;
+    --cream:#faf9f6;
+    --ink:#2b2b2b;
+    --grey:#6b7280;
+    --border:#e8e6df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* Ribbon */
+  .ribbon{background:var(--navy);color:#fff;font-size:13px;}
+  .ribbon .wrap{display:flex;justify-content:center;gap:36px;padding:9px 24px;flex-wrap:wrap;}
+  .ribbon span::before{content:"";display:inline-block;width:6px;height:6px;background:var(--brass);border-radius:50%;margin-right:8px;vertical-align:middle;}
+
+  /* Header */
+  header{border-bottom:1px solid var(--border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1180px;margin:0 auto;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--navy);}
+  .brand span{color:var(--teal);}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--navy);}
+  .nav-links a:hover{color:var(--teal-dark);}
+  .call-btn{background:var(--teal);color:#fff;padding:9px 18px;border-radius:3px;font-size:13px;font-weight:600;}
+  @media (max-width:760px){ .nav-links{display:none;} }
+
+  /* Breadcrumb */
+  .crumb{font-size:12.5px;color:var(--grey);padding:14px 24px 0;max-width:1180px;margin:0 auto;}
+  .crumb a:hover{color:var(--teal-dark);}
+
+  /* Hero */
+  .hero{padding:40px 24px 48px;max-width:1180px;margin:0 auto;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--teal-dark);margin-bottom:16px;}
+  .eyebrow::before, .eyebrow::after{content:"";width:22px;height:2px;background:var(--brass);}
+  .hero h1{font-size:40px;margin-bottom:14px;}
+  .hero p{font-size:16px;color:var(--grey);max-width:60ch;margin:0 auto;line-height:1.65;}
+
+  /* Category tile grid */
+  .grid-section{max-width:1180px;margin:0 auto;padding:0 24px 64px;}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .grid{grid-template-columns:1fr;} }
+
+  .tile{
+    border:1px solid var(--border);border-radius:8px;padding:28px 26px;background:#fff;
+    display:flex;flex-direction:column;justify-content:space-between;min-height:150px;
+    transition:box-shadow .15s,transform .15s,border-color .15s;
+  }
+  .tile:hover{box-shadow:0 10px 24px rgba(26,35,64,.08);transform:translateY(-2px);border-color:var(--teal);}
+  .tile h3{font-size:17px;line-height:1.35;margin-bottom:18px;}
+  .tile-link{
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--navy);
+    border-bottom:1.5px solid var(--teal);padding-bottom:2px;width:fit-content;
+  }
+  .tile:hover .tile-link{color:var(--teal-dark);}
+
+  /* Trust bar */
+  .trust{background:var(--navy);color:#fff;padding:46px 24px;}
+  .trust .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;text-align:center;}
+  .trust .item{flex:1;min-width:180px;}
+  .trust .item strong{display:block;font-family:'Fraunces',serif;font-size:22px;color:var(--teal);margin-bottom:6px;}
+  .trust .item span{font-size:13px;color:#c7cbdc;}
+
+  /* CTA band */
+  .cta-band{padding:56px 24px;text-align:center;background:linear-gradient(180deg,#fff 0%,var(--cream) 100%);}
+  .cta-band h2{font-size:24px;margin-bottom:12px;}
+  .cta-band p{font-size:14.5px;color:var(--grey);max-width:52ch;margin:0 auto 24px;}
+  .btn-primary{background:var(--navy);color:#fff;padding:13px 26px;border-radius:4px;font-weight:600;font-size:14px;display:inline-block;}
+  .btn-primary:hover{background:var(--navy-light);}
+
+  /* Footer */
+  footer{background:var(--navy);color:#c7cbdc;padding:48px 24px 24px;font-size:13.5px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;max-width:1180px;margin:0 auto;padding-bottom:32px;}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr;} }
+  footer h4{color:#fff;font-family:'Fraunces',serif;font-size:15px;margin-bottom:14px;font-weight:600;}
+  footer p, footer li{color:#a9aec6;line-height:1.8;}
+  footer ul{list-style:none;}
+  footer a:hover{color:var(--teal);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);max-width:1180px;margin:0 auto;padding-top:20px;font-size:12.5px;color:#8890ab;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="wrap">
+    <span>Free Delivery</span>
+    <span>Enquire about Same Day Delivery</span>
+    <span>Same Day Collection</span>
+  </div>
+</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">Gellings<span>.</span></div>
+    <nav class="nav-links">
+      <a href="https://www.gellings.im/">Home</a>
+      <a href="https://johno78.github.io/latest-news/">News</a>
+      <a href="https://johno78.github.io/Offers-Savings/">Offers</a>
+      <a href="https://www.gellings.im/page_493071.asp">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:01624671200">Call 01624 671200</a>
+  </div>
+</header>
+
+<div class="crumb">
+  <a href="https://www.gellings.im/prod_cat/index.shtml">Product Catalogue</a> / Cleaning Chemicals
+</div>
+
+<section class="hero">
+  <div class="eyebrow">Isle of Man Trade Supplies</div>
+  <h1>Cleaning Chemicals</h1>
+  <p>From everyday washroom cleaners to specialist industrial and beverage-line chemicals — a full range of trusted brands, dosing systems and formulations for every part of the business.</p>
+</section>
+
+<section class="grid-section">
+  <div class="grid">
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_bleaches--disinfectants_13.asp">
+      <h3>Bleaches &amp; Disinfectants</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_specialist-house-keeping_14.asp">
+      <h3>Specialist (House Keeping)</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_oven-cleaners-and-degreasers_245.asp">
+      <h3>Oven Cleaners &amp; Degreasers</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_pro-formula-range_246.asp">
+      <h3>Pro Formula Range</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_washroom-cleaning-_349.asp">
+      <h3>Washroom Cleaning</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_housekeeping-and-room-care-_350.asp">
+      <h3>Housekeeping &amp; Room Care</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_floor-care-_352.asp">
+      <h3>Floor Care</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_leisure-club-_354.asp">
+      <h3>Leisure Club</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_divermite-cleaning-system-_355.asp">
+      <h3>Divermite Cleaning System</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_sure-by-diversey-_356.asp">
+      <h3>SURE by Diversey</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_smartdose-cleaning-system-_357.asp">
+      <h3>SmartDose Cleaning System</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_beverage-cleaning-chemicals-_359.asp">
+      <h3>Beverage Cleaning Chemicals</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+    <a class="tile" href="https://www.gellings.im/prod_cat/C_specialist-cleaning-industrial_392.asp">
+      <h3>Specialist Cleaning (Industrial)</h3>
+      <span class="tile-link">View Products →</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap">
+    <div class="item"><strong>Est. 1965</strong><span>Isle of Man's trusted hygiene &amp; hospitality supplier</span></div>
+    <div class="item"><strong>Free Delivery</strong><span>Across the Isle of Man</span></div>
+    <div class="item"><strong>Trade Accounts</strong><span>Set up in minutes</span></div>
+    <div class="item"><strong>01624 671200</strong><span>Speak to the team directly</span></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Not sure which chemical you need?</h2>
+  <p>Give us a call — we'll help match the right product and dosing system to your site.</p>
+  <a class="btn-primary" href="tel:01624671200">Call 01624 671200</a>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Gellings</h4>
+      <p>Unit 4 Kirby Farm Industrial Estate,<br>Vicarage Road, Braddan,<br>Isle of Man, IM4 4LA</p>
+      <p style="margin-top:10px;">Call 01624 671200<br>info@gellings.im</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="https://www.gellings.im/prod_cat/index.shtml">Full Catalogue</a></li>
+        <li><a href="https://johno78.github.io/Offers-Savings/">Offers &amp; Savings</a></li>
+        <li><a href="https://johno78.github.io/Catering-Kitchens/">Catering &amp; Kitchens</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="https://www.gellings.im/page_493027.asp">About</a></li>
+        <li><a href="https://www.gellings.im/page_551285.asp">Trade Account</a></li>
+        <li><a href="https://www.gellings.im/page_493071.asp">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Copyright Gellings</span>
+    <span>Website by 3 Legs Ltd</span>
+  </div>
+</footer>
+
+</body>
+</html>
